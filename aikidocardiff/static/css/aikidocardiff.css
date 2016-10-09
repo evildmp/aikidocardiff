@@ -1,21 +1,20 @@
 /* HTML element styling */
 
-html  {background: #f95011;
+html  {
     height: 100% ;}
 
 body	{
-	background: #f95011;
+	margin: 0;
+	background: #f6f6e9;
 	color: black;
-	margin: 50px auto; padding: 0px;
 	font-family: "gill sans", "gill sans mt", "Trebuchet MS", sans-serif ;
-	border: black solid 2px;
-	width: 880px;
 	}
 
 
 h1	{
-	font-size: 200%;
-	padding: 1ex 0 3ex; margin: 0;
+	font-size: 150%;
+	padding: 1ex 0 3ex;
+  margin: 0;
 	font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Century Schoolbook L", serif;
 	font-weight: normal;
 	font-variant: small-caps;
@@ -61,7 +60,7 @@ a:link:hover, a:visited:hover	{color: gray; text-decoration-color: #f95011;}
 
 div#outer-wrapper {
 	background: #f6f6e9;
-	padding: 10px 40px;
+	padding: 10px;
 	margin: 0px ;
 	}
 
@@ -85,43 +84,6 @@ div.footer a {font-family:"Hoefler Text", "Didot", Georgia, serif; text-decorati
 .venue-line {font-style: italic;}
 .venue-line .venue {font-style: normal;}
 
-/* menus */
-
-ul.menu	{
-	padding: 0 0;
-	/*
-	top: 100px;
-	right: 50px ;
-	left: 50px; */
-	text-align: left ;
-	}
-
-ul.menu ul {display: inline; text-align: right; float: right;}
-
-li.menu_item	{
-	display: inline;
-	width: 100%;
-	padding: 0;
-	margin-right: 0;
-	list-style-type: none;
-	font-family: Baskerville, "gill sans", "gill sans mt", "Trebuchet MS", sans-serif;
-	font-weight: normal;
-	font-variant: small-caps;
-	}
-
-ul.menu ul li {padding-left: 1em;}
-
-li.menu_item a	{
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	color: gray;
-	}
-
-li.menu_item a:hover	{
-	color: #f95011;
-	}
-
 li img {padding-top: 2px;}
 
 dl dt  {margin-top: 1ex;}
@@ -139,10 +101,101 @@ blockquote  {padding-left: 1em; padding-right: 1em; color: #222; 	font-family: B
 
 .orange-border-top  {border-top: 1px solid #f95011;}
 
-/* hacks for broken browsers */
+/* menus */
 
-/* Hides from IE5-mac \*/
-* html #inner-wrapper {height: 1%;}
-/* End hide from IE5-mac */
+nav#menu li {display: none;}
+nav#menu.topnav li.icon {
+  margin-top: 0;
+  display: block;
+	font-variant: small-caps;
+  }
 
-div.block-core-Navigator .first {display: none;}
+nav#menu li a {
+  color: #f95011;
+  font-size: 120%;
+  }
+
+ul.menu, ul.menu ul {
+   margin: 0;
+   padding: 0;
+}
+
+li.menu_item	{
+  margin: 0;
+  padding: 0;
+	font-family: Baskerville, "gill sans", "gill sans mt", "Trebuchet MS", sans-serif;
+	font-weight: normal;
+	font-variant: small-caps;
+  }
+
+li.menu_item a	{
+	text-decoration: none;
+	color: gray;
+	}
+
+li.menu_item a:hover	{
+	color: #f95011;
+	}
+
+/* when the menu is expanded */
+
+nav#menu.expanded li {
+  display: block;
+  margin-top: 15px;
+}
+
+
+
+@media screen and (min-width: 660px) {
+  nav#menu>ul {margin-top: 20px;}
+  nav#menu li.menu_item {
+    display: inline;
+    float: none;
+  }
+  nav#menu.topnav li.icon {display: none;}
+  nav#menu ul.menu ul {display: inline; text-align: right; float: right;}
+  nav#menu ul.menu ul li {padding-left: 1em;}
+  nav#menu li a {
+    color: gray;
+    }
+  nav#menu li.menu_item a:hover	{
+  	color: #f95011;
+  	}
+
+  ul.menu	{
+  	padding: 0;
+  	text-align: left ;
+  	}
+
+  li.menu_item	{
+  	padding: 0;
+  	margin-right: 0;
+  	width: 100%;
+  	list-style-type: none;
+  }
+
+  li.menu_item a	{
+  	margin: 0;
+  	padding: 0;
+  }
+
+}
+
+@media screen and (min-width: 880px) {
+  body {
+  	background: #f95011;
+    max-width: 876px;
+  	margin: 50px auto; padding: 0px;
+  	border: black solid 2px;
+  }
+
+  div#outer-wrapper {
+  	padding: 10px 40px;
+  }
+
+  h1	{
+  	font-size: 150%;
+  	padding: 1ex 0 1ex;
+  	}
+
+}
