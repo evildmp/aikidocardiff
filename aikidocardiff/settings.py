@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Django settings for aikidocardiff project.
 
 from secret_settings import DATABASES, SECRET_KEY
@@ -22,8 +21,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-from secret_settings import *
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -125,6 +122,7 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+
     # 'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
@@ -134,6 +132,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'aikidocardiff.urls'
+
+# Python dotted path to the WSGI application used by Django's runserver.
+WSGI_APPLICATION = 'aikidocardiff.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -194,6 +195,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.markup',
 
+    # 'debug_toolbar',
     'aikidocardiff',
 
 
@@ -278,23 +280,23 @@ CMS_PAGE_FLAGS = (
 
 CMS_PLACEHOLDER_CONF = {
     'body': {
-        "plugins": (
-            'SemanticTextPlugin',
-            'CMSVacanciesPlugin',
-            'CMSNewsAndEventsPlugin',
-            'SnippetPlugin',
-            'LinksPlugin',
-            'CMSPublicationsPlugin',
-            'ImagePlugin',
-            'ImageSetPublisher',
-            'EntityAutoPageLinkPluginPublisher',
-            'EntityMembersPluginPublisher',
-            'FilerImagePlugin',
-            'EntityDirectoryPluginPublisher',
-            'CarouselPluginPublisher',
-            'FocusOnPluginPublisher',
-            'VideoPluginPublisher',
-            ),
+        # "plugins": (
+        #     'SemanticTextPlugin',
+        #     'CMSVacanciesPlugin',
+        #     'CMSNewsAndEventsPlugin',
+        #     'SnippetPlugin',
+        #     'LinksPlugin',
+        #     'CMSPublicationsPlugin',
+        #     'ImagePlugin',
+        #     'ImageSetPublisher',
+        #     'EntityAutoPageLinkPluginPublisher',
+        #     'EntityMembersPluginPublisher',
+        #     'FilerImagePlugin',
+        #     'EntityDirectoryPluginPublisher',
+        #     'CarouselPluginPublisher',
+        #     'FocusOnPluginPublisher',
+        #     'VideoPluginPublisher',
+        #     ),
         "extra_context": {
             "width":"880",
             },
@@ -304,8 +306,6 @@ CMS_PLACEHOLDER_CONF = {
 
 LANGUAGES = (
 ('en', gettext('English')),
-('de', gettext('German')),
-('cy', gettext('Cymraeg')),
 )
 
 # ------------------------ WYMeditor/SemanticEditor
@@ -322,6 +322,7 @@ WYM_TOOLS = ",\n".join([
     "{'name': 'Undo', 'title': 'Undo', 'css': 'wym_tools_undo'}",
     "{'name': 'Redo', 'title': 'Redo', 'css': 'wym_tools_redo'}",
     "{'name': 'ToggleHtml', 'title': 'HTML', 'css': 'wym_tools_html'}",
+    "{'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'}",
 ])
 
 WYM_CONTAINERS = ",\n".join([
@@ -332,12 +333,11 @@ WYM_CONTAINERS = ",\n".join([
     "{'name': 'H4', 'title': 'Heading_4', 'css': 'wym_containers_h4'}",
     "{'name': 'H5', 'title': 'Heading_5', 'css': 'wym_containers_h5'}",
     "{'name': 'H6', 'title': 'Heading_6', 'css': 'wym_containers_h6'}",
-#    "{'name': 'PRE', 'title': 'Preformatted', 'css': 'wym_containers_pre'}",
+   "{'name': 'PRE', 'title': 'Preformatted', 'css': 'wym_containers_pre'}",
    "{'name': 'BLOCKQUOTE', 'title': 'Blockquote', 'css': 'wym_containers_blockquote'}",
-   # "{'name': 'TH', 'title': 'Table_Header', 'css': 'wym_containers_th'}", # not ready for this yet
+   "{'name': 'TH', 'title': 'Table_Header', 'css': 'wym_containers_th'}", # not ready for this yet
 ])
 
+SEMANTICEDITOR_DISALLOWED_ELEMENTS = ['span', 'li p:only-child']
 
-# Override the server-derived value of SCRIPT_NAME
-# See http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges#lighttpdfastcgiandothers
-FORCE_SCRIPT_NAME = ''
+from arkestra_settings import *# import pdb; pdb.set_trace()
