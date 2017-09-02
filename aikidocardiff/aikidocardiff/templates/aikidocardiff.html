@@ -1,0 +1,66 @@
+{% extends "arkestra.html" %}
+
+{% load menu_tags %}
+
+{% block favicon %}
+<link rel="icon"
+      type="image/png"
+      href="/media/images/fudoshin-favicon.png">
+{% endblock favicon %}
+
+
+{% block site_styles %}
+	<link href="/static/css/aikidocardiff.css" rel="stylesheet" media="screen" />
+{% endblock site_styles %}
+
+{% block meta %}
+	{{ block.super }}
+	<meta name="google-site-verification" content="BiRK5sTAXAZFPVDZHH6FxpN4lZUOp1DBBq-nH81R1VM" />
+{% endblock meta %}
+
+{% block scripts %}
+	{{ block.super }}
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4662872-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script>
+function myFunction() {
+    var x = document.getElementById("menu");
+    if (x.className === "topnav") {
+        x.className += " expanded";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+{% endblock scripts %}
+
+{% block menu %}
+  <nav id="menu" class="topnav">
+    <ul class="menu">
+      <li class="icon menu_item">
+        <a href="javascript:void(0);" onclick="myFunction()">&#9776; Menu</a>
+      </li>
+      {% show_menu 0 100 100 100 "cms/arkestra_menu.html" "" "" %}
+    </ul>
+  </nav>
+{% endblock menu %}
+
+
+{% block body_content %}
+	{% with placeholder_width=800 main_item_width=523 sidebar_image_size="245x245" sidebar_map_size="245x100" contacts_image_size="384x384" lightbox_max_dimension=800 entity_image_size="384x384" person_entity_map_size="384x284" place_image_size="523x418" %}
+	{{ block.super }}
+	{% endwith %}
+
+{% endblock body_content %}
+
+{% block footer %}
+    <div class="footer">This website is powered by <a href="https://github.com/evildmp/Arkestra">Arkestra</a></div>
+{% endblock footer %}

@@ -1,0 +1,213 @@
+/* HTML element styling */
+
+html  {
+    height: 100% ;}
+
+body	{
+	margin: 0;
+	background: #f6f6e9;
+	color: black;
+	font-family: "gill sans", "gill sans mt", "Trebuchet MS", sans-serif ;
+	}
+
+
+h1	{
+	font-size: 150%;
+	padding: 1ex 0 3ex;
+    margin: 0;
+	font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Century Schoolbook L", serif;
+	font-weight: normal;
+	font-variant: small-caps;
+	letter-spacing: .05em;
+	text-align: center;
+	}
+
+h1:first-letter	{color: #f95011;}
+
+
+h2	{
+	font-size: 120%;
+	padding: 4ex 0 .5ex; margin: 0;
+	font-family: "gill sans", "gill sans mt", "Trebuchet MS", sans-serif ;
+	font-weight: bold;
+	letter-spacing: .05em;
+	text-align: left;
+	}
+
+h3	{
+	font-size: 130%;
+	padding: 2ex 0 .5ex; margin: 0;
+	font-family: "gill sans", "gill sans mt", "Trebuchet MS", sans-serif ;
+	font-weight: 100;
+	text-align: left;
+	}
+
+
+h4 {padding: .7ex 0 0; margin: 0; }
+
+p	{margin: 2ex 0; line-height: 1.5;}
+
+ul	{list-style: square inside;}
+li  {margin-top: .4em; margin-bottom: .4em; color: #444;}
+
+em	{font-style: italic;}
+
+a:link, a:visited	{color: #f95011 ;}
+a:link:hover, a:visited:hover	{color: gray; text-decoration-color: #f95011;}
+
+
+/* main layout and styling divs */
+
+div#outer-wrapper {
+	background: #f6f6e9;
+	padding: 10px;
+	margin: 0px ;
+	}
+
+div.main	{float: left; width: 100%; height: 100%;	line-height: 1.2em;
+}
+
+/* more specific element styling */
+
+p.subtitle  {font-weight: lighter; font-size: 140%; margin: 3ex 0;}
+.plugin ul    {font-size: 90%;}
+.plugin ul ul {font-size: 100%;}
+ul.all_info {margin-left: 0; padding-left: 0;}
+li.grouper, dt {font-weight: bold; color: gray; list-style: none;}
+li.grouper ul   {font-weight: normal; color: black; }
+li div  {line-height: 1.2;}
+
+.date   {color: gray; font-style: italic;}
+
+div.footer {color: #777; font-size: 80%; text-align: right; font-style: italic;}
+div.footer a {font-family:"Hoefler Text", "Didot", Georgia, serif; text-decoration: none;}
+
+.venue-line {font-style: italic;}
+.venue-line .venue {font-style: normal;}
+
+li img {padding-top: 2px;}
+
+dl dt  {margin-top: 1ex;}
+dl dd  {font-style: italic; margin-left:0; margin-top: .5ex; line-height: 1.2;}
+
+div.anythingSlider {margin-top: 4ex;}
+
+/* typography */
+
+p.standout {
+    color: #f95011;
+    font-weight: lighter; font-size: 140%; margin: 3ex 0;
+}
+
+div.buttonise-links a:link, div.buttonise-links a:visited {
+    background-color: #f95011; color: #f6f6e9;
+    padding: 1ex;
+    border-radius: 5px;
+    text-decoration: none;
+	font-family: "gill sans", "gill sans mt", "Trebuchet MS", sans-serif;
+    font-weight: normal;
+}
+
+blockquote  {padding-left: 1em; padding-right: 1em; color: #222; 	font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Century Schoolbook L", serif;
+}
+
+.orange-border-top  {border-top: 1px solid #f95011; margin-top: 2ex; padding-top: 2ex;}
+
+/* menus */
+
+nav#menu li {display: none;}
+nav#menu.topnav li.icon {
+  margin-top: 0;
+  display: block;
+	font-variant: small-caps;
+  }
+
+nav#menu li a {
+  color: #f95011;
+  font-size: 120%;
+  }
+
+ul.menu, ul.menu ul {
+   margin: 0;
+   padding: 0;
+}
+
+li.menu_item	{
+  margin: 0;
+  padding: 0;
+	font-family: Baskerville, "gill sans", "gill sans mt", "Trebuchet MS", sans-serif;
+	font-weight: normal;
+	font-variant: small-caps;
+  }
+
+li.menu_item a	{
+	text-decoration: none;
+	color: gray;
+	}
+
+li.menu_item a:hover	{
+	color: #f95011;
+	}
+
+/* when the menu is expanded */
+
+nav#menu.expanded li {
+  display: block;
+  margin-top: 15px;
+}
+
+
+
+@media screen and (min-width: 660px) {
+  nav#menu>ul {margin-top: 20px;}
+  nav#menu li.menu_item {
+    display: inline;
+    float: none;
+  }
+  nav#menu.topnav li.icon {display: none;}
+  nav#menu ul.menu ul {display: inline; text-align: right; float: right;}
+  nav#menu ul.menu ul li {padding-left: 1em;}
+  nav#menu li a {
+    color: gray;
+    }
+  nav#menu li.menu_item a:hover	{
+  	color: #f95011;
+  	}
+
+  ul.menu	{
+  	padding: 0;
+  	text-align: left ;
+  	}
+
+  li.menu_item	{
+  	padding: 0;
+  	margin-right: 0;
+  	width: 100%;
+  	list-style-type: none;
+  }
+
+  li.menu_item a	{
+  	margin: 0;
+  	padding: 0;
+  }
+
+}
+
+@media screen and (min-width: 880px) {
+  body {
+  	background: #f95011;
+    max-width: 876px;
+  	margin: 50px auto; padding: 0px;
+  	border: black solid 2px;
+  }
+
+  div#outer-wrapper {
+  	padding: 10px 40px;
+  }
+
+  h1	{
+  	font-size: 150%;
+  	padding: 2ex 0 1ex;
+  	}
+
+}
